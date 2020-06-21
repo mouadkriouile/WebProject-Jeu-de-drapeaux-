@@ -1,0 +1,328 @@
+/*  
+ * SOME REQUIRED STYLING CLASSES
+ */
+
+* {
+    outline: none !important;
+    box-shadow: none !important;
+    font-weight: 0 !important;
+}
+
+.no-select * {
+    user-select: none;
+}
+
+/*  
+ * BUILDER STYLE
+ */
+
+.builder,
+.builder body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.builder-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 
+ * THE ALERT STYLING
+ */
+
+.floating-alert {
+    /*box-shadow: 0px 0px 4px 1px rgba(128, 0, 0, 0.5);*/
+
+    position: fixed;
+    z-index: 2000;
+
+    bottom: 0px;
+    left: 16px;
+}
+
+.floating-alert:not(.show) {
+    /*Prevent click on the not shown alert*/
+    pointer-events: none;
+}
+
+
+/*  
+ * NAVBAR STYLE
+ */
+
+.main-navbar .nav-link {
+    text-transform: uppercase;
+}
+
+.main-navbar .active > .nav-link {
+    background-color: #ebebeb;
+    border-radius: 3px;
+}
+
+/* 
+ * GAME PAGE AND MAP STYLES
+ */
+
+.game-page,
+.game-page body {
+    height: 100%;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.geojson-layer {
+    cursor: crosshair !important;
+}
+
+.map-wrapper:hover {
+    cursor: crosshair !important;
+}
+
+.game-gui {
+    width: 230px;
+    right: 0;
+
+    z-index: 1005;
+}
+
+/*  
+ * SCORE PANEL
+ */
+
+.score-panel {
+    text-align: center;
+}
+
+.score-panel > div {
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.score-panel > div > div {
+    min-width: 10%;
+}
+
+/*  
+ * FLAG STYLE 
+ */
+
+.game-gui .flag {
+    position: relative;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.game-gui .flag-holder {
+
+    /* 
+    After some research we found 
+    that most flags are 2:3 aspect ratio 
+    */
+
+    width: 150px;
+    height: 100px;
+}
+
+.game-gui .flag-vignette {
+    width: 150px;
+    height: 100px;
+
+    top: 0;
+    position: absolute;
+
+    box-shadow: inset 0px 0px 25px 2px rgba(0, 0, 0, 0.4) !important;
+    border-radius: 4px;
+}
+
+.game-gui .flag-holder img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5px;
+}
+
+/*  
+ * GAME PROGRESS BAR
+ */
+
+.quiz-progressBar {
+    min-height: 10px;
+}
+
+.quiz-progressBar div {
+    height: 4px;
+
+    margin: 3px 2px;
+
+    background: rgba(90, 90, 90, 0.2);
+    border-radius: 2px;
+
+    flex-grow: 1;
+    transition: .2s all;
+}
+
+.quiz-progressBar.click-allowed div {
+    height: 10px;
+    margin: 0px 2px;
+}
+
+.quiz-progressBar.click-allowed div:hover {
+    cursor: pointer;
+}
+
+.quiz-progressBar div:first-child {
+    margin-left: 0;
+}
+
+.quiz-progressBar div:last-child {
+    margin-right: 0;
+}
+
+.quiz-progressBar .current {
+    background: #000000;
+}
+
+.quiz-progressBar .passed {
+    background: #3de80d;
+}
+
+.quiz-progressBar .missed {
+    background: #ffc107;
+}
+
+.quiz-progressBar .failed {
+    background: #e80404;
+}
+
+/* Here so we override previous styles */
+.quiz-progressBar .selected {
+    background: #008aff;
+}
+
+/*  
+ * COUNTRY INFO PANEL
+ */
+
+.infoPanel .title {
+    color: #676767;
+}
+
+.infoPanel .info {
+    color: #242424;
+    font-weight: bold;
+}
+
+.infoPanel.show-info {
+    height: auto;
+    opacity: 1;
+}
+
+.wikilink {
+    color: #46aefa !important;
+    float: right;
+}
+
+/* 
+ * BACKGROUND MUSIC TOGGLE BUTTON
+ */
+
+.background-music-btn {
+    color: transparent !important;
+    background-image: url(../images/unmute.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.background-music-btn.sound-muted {
+    background-image: url(../images/mute.png);
+}
+
+/* 
+ * LOGIN AND SIGNUP FORMS STYLING
+ */
+
+.login-menu {
+    width: 300px;
+
+    /* Make login menu above the game-gui*/
+    z-index: 1010;
+}
+
+.input-group-icon img {
+    height: 16px;
+}
+
+.icon {
+    width: 32px;
+
+    background-color: #efefef;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.icon-email {
+    background-image: url(../images/email.png);
+}
+
+.icon-password {
+    background-image: url(../images/password.png);
+}
+
+.icon-list a {
+    display: inline-block;
+    padding-right: 16px;
+}
+
+/* 
+ * COUNTRY BUTTONS IN STATS AND QUIZ EDITORS
+ */
+
+.country-span {
+    display: inline-flex;
+    background-color: #eaeaea;
+
+    padding: 3px 5px;
+    margin: 2px 2px;
+
+    border-radius: 2px;
+}
+
+.country-btn {
+    display: inline-flex;
+    background-color: #eaeaea;
+
+    padding: 2px 3px;
+    margin: 2px 2px;
+
+    border-radius: 2px;
+}
+
+.country-btn:hover {
+    cursor: pointer;
+}
+
+.country-selected {
+    background-color: #66cb27;
+    color: #fff;
+}
+
+.continent-list a {
+    border: none;
+    border-left: 8px solid;
+}
+
+.continent-list .allowed-mode {
+    border-left-color: #26d406;
+}
+
+.continent-list .limited-mode {
+    border-left-color: #404040;
+}
